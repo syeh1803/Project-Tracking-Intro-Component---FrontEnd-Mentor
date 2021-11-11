@@ -1,0 +1,296 @@
+/* reset css */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */ 
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+    font-family: "Barlow", sans-serif;
+    font-size: 1.8rem;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Custom Additions Below */
+:root, * {
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+}
+
+a, a:hover, a:focus, a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* style starts here */
+body {
+   width: 100%;
+   height: 100vh;
+   overflow-x: hidden;
+}
+
+body::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    content: "";
+    background-color: hsl(207, 33%, 95%);
+    height: 47vh;
+    width: 50vw;
+    border-bottom-left-radius: 5rem;
+    z-index: -1;
+}
+
+.container {
+    padding: 3.6rem 2.4rem;
+}
+
+nav, .content h5, .content h1 {
+    font-family: 'Barlow Condensed';
+    text-transform: uppercase;
+}
+
+/* header style */
+nav {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+nav img {
+    display: inline-block;
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+nav button {
+    font-size: 2rem;
+}
+
+nav button#cross {
+    display: none;
+}
+
+ul {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.4rem;
+    width: 85%;
+    margin-top: 6rem;
+    padding: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+    background: #fff;
+    display: none;
+}
+
+ul.nav-list.show {
+    display: flex;
+}
+
+ul > li:hover{
+    text-decoration: underline;
+}
+
+li:nth-child(4) {
+    display: none;
+}
+
+li:last-child {
+    color: hsl(231, 7%, 65%);
+}
+
+hr {
+    width: 27rem;
+    border: 0;
+    height: 0.1rem;
+    background: hsl(231, 7%, 65%);
+    opacity: 0.4;
+}
+
+/* Content */
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 7.8rem;
+}
+
+.hero img {
+    margin-top: 5.5rem;
+    width: 155%;
+}
+
+.content h5 {
+    font-weight: 400;
+    color: hsl(231, 7%, 65%);
+}
+
+.content h5 span.new {
+    background-color: hsl(230, 29%, 20%);
+    color: #fff;
+    padding: 0.3rem 1.2rem;
+    border-radius: 2rem;
+}
+
+.content h5 span.monograph {
+    margin-left: 1.5rem;
+    letter-spacing: 0.5rem;
+    opacity: 0.8;
+}
+
+.content h1 {
+    margin: 2.3rem 0 1.5rem 0;
+    font-size: 4rem;
+    color: hsl(230, 29%, 20%);
+}
+
+.content p {
+    margin-bottom: 2rem;
+    font-size: 1.9rem;
+    color: hsl(230, 11%, 40%);
+    line-height: 1.5;
+    opacity: 0.7;
+}
+
+.button button, .button span {
+    font-family: 'Barlow Condensed';
+}
+
+.button button {
+    margin-right: 2rem;
+    padding: 1.2rem 2.3rem;
+    background-color: hsl(0, 100%, 68%);
+    font-size: 1.4rem;
+    letter-spacing: 0.1rem;
+    color: #fff;
+    border-radius: 0.5rem;
+}
+
+.button span {
+    font-size: 1.4rem;
+    letter-spacing: 0.18rem;
+    color: hsl(231, 7%, 65%);
+    opacity: 0.7;
+}
+
+/* media query */
+@media screen and (min-width: 1440px) {
+    nav {
+        display: block;
+    }
+
+    nav img {
+        width: 3rem;
+        height: 3rem;
+    }
+
+    nav button {
+        display: none;
+    }
+    
+    ul {
+        all: unset;
+        display: flex;
+        transform: translate(55%, -50%);
+        list-style: none;
+        font-weight: 600;
+    }
+
+    ul > li {
+        margin-right: 4rem;
+    }
+
+    li:nth-child(4) {
+        display: block;
+        margin-right: 5rem;
+        font-size: 3.2rem;
+        color: hsl(231, 7%, 65%);
+        opacity: 0.6;
+        transform: translateY(-50%);
+    }
+
+    li:last-child {
+     margin-right: 15rem;
+    } 
+
+    hr {
+        display: none;
+    }
+
+    .container {
+        padding: 6.4rem 0 12.5rem 16rem;
+    }
+
+    .wrapper {
+        flex-direction: row-reverse;
+        margin-top: 17rem;
+    }
+    .wrapper .hero img {
+        width: 160%;
+        transform: translate(-8%, -15%);
+    }
+
+    .content h1 {
+        margin-bottom: 3rem;
+        font-size: 6.5rem;
+    }
+
+    .content p {
+        margin-bottom: 7rem;
+        padding-right: 28rem;
+    }
+
+    .button button {
+        padding: 1.5rem 3.3rem;
+        font-size: 1.7rem;
+    }
+
+    .button span {
+        font-size: 1.6rem;
+        letter-spacing: 0.4rem;
+    }
+}
